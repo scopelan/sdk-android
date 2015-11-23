@@ -30,7 +30,7 @@ directory.  Make sure the files get unzipped directly into the root SDK
 directory.
 
 2.  If your AndroidManifest.xml file doesn't already allow access to the
-Internet and your phone state, make sure to add the following snippetd in the 
+Internet and your phone state, make sure to add the following snippet in the 
 manifest element.
 
   <uses-permission android:name="android.permission.INTERNET"/>
@@ -42,10 +42,10 @@ application element of your app.  Every activity declaration is NOT necessary,
 only the ones that are explicitly used in the app are required.  
 
 4.  The developer will need to create a layout that will be used to collect
-the account login id and password.  These two pieces of information should be
+the account login ID and password.  These two pieces of information should be
 EditText objects.  Additionally a cancel and validate/ok button will need to
 be placed in the layout as well.  They don't have to be visible, but they must
-exist.  The SDK takes the Android id's of these components and uses them when
+exist.  The SDK takes the Android IDs of these components and uses them when
 it's necessary to login to the Authorize.Net gateway.  The logic is handled by
 the SDK, but the UI is flexible and must be implemented by the developer.  
  
