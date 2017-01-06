@@ -1,14 +1,14 @@
 # Authorize.Net In-Person Android SDK Integration Guide 
 
-The Authorize.Net Android In-Person SDK enables you to build point-of-sale Android applications that accept EMV payments. The merchantís application invokes this SDK to complete an EMV transaction. 
+The Authorize.Net Android In-Person SDK enables you to build point-of-sale Android applications that accept EMV payments. The merchant's application invokes this SDK to complete an EMV transaction. 
 
-The SDK handles the complex EMV workflow and securely submits the EMV transaction to the Authorize.Net gateway for processing. The merchantís application never touches any EMV data at any time, simplifying PCI compliance.  
+The SDK handles the complex EMV workflow and securely submits the EMV transaction to the Authorize.Net gateway for processing. The merchant's application never touches any EMV data at any time, simplifying PCI compliance.  
 
 ## Usage Workflow
 
-1.	Insert the card reader. 
-2.	Insert a card with an EMV chip. 
-3.	Select the Application, if prompted. If only a compatible application resides on the card, the application is selected automatically. 
+1.	Insert the card reader into the PoS device. 
+2.	Insert a card with an EMV chip into the slot on the card reader. 
+3.	Select the application, if prompted. If only a compatible application resides on the card, the application is selected automatically. 
 4.	Confirm amount. 
 5.	Do not remove card until the transaction is complete. 
 6.	If at any time the user cancels the transaction, the EMV transaction is cancelled.
@@ -55,14 +55,14 @@ The merchant application must populate all the fields required by a standard pay
 
 The EMV transaction was approved.
 
-The Result object is returned to the merchantís app. The Result object contains all the values present in a regular API Result object. In addition, it has the EMV response data in a hash map. Standard EMV tag values can be used as keys to retrieve information from the hash map. For example, to retrieve application ID:
+The Result object is returned to the merchant's app. The Result object contains all the values present in a regular API Result object. In addition, it has the EMV response data in a hash map. Standard EMV tag values can be used as keys to retrieve information from the hash map. For example, to retrieve application ID:
 
 `HashMap<String,String> map = result.getEmvTlvMap();
 String applicationId= map.get("4f");`
 
 **Server error:** `onEMVTransactionError`
 
-The transaction was sent to the server, but the server returned an error. For example: ìSession time out, insufficient balance.î The `Result` object is returned.
+The transaction was sent to the server, but the server returned an error. For example: ìSession time out, insufficient balance. The `Result` object is returned.
 
 **EMV Error:** `onEMVReadError`
 
